@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-start">
+  <div
+    *ngFor="let table of tables"
+    class="list-group-item">
+    <div class="table-content">
+      <div class="table-header">
+        <h2>{{ table }}</h2>
+      </div>
+        <app-tickets-list></app-tickets-list>
+    </div>
+  </div>
+  <input
+    [(ngModel)]="tableName"
+    type="text"
+    class="form-control"
+    placeholder="Ajouter une table"
+    (keyup.enter)="onKeyUp()">
+</div>
+  

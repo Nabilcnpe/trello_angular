@@ -1,0 +1,14 @@
+.header {
+    background-color: grey;
+    height: 50px;
+    padding: 5px 10px;
+
+    .form-control {
+        width: 300px;
+        background-color: rgb(255, 227, 227);
+    }
+
+    .form-control::placeholder {
+        color: grey;
+    }
+}

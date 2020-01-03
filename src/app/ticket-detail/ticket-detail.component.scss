@@ -1,0 +1,11 @@
+.modal-header {
+
+    .close {
+        cursor:pointer;
+        color: #172b4d;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}

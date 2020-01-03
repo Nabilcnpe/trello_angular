@@ -1,4 +1,6 @@
+import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 import { Component } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-practicing';
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(TicketDetailComponent);
+  }
+  
 }
