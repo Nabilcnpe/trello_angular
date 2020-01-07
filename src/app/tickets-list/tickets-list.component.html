@@ -1,25 +1,29 @@
 <div class="cards-list">
-  <div *ngFor="let ticket of tickets" (click)="open(ticket)" class="card justify-content-between">
-    <a>{{ ticket }}</a>
-    <mat-icon
+  <div *ngFor="let ticket of tickets" class="card">
+    <a (click)="open(ticket)" >{{ ticket }}</a>
+    <!-- <mat-icon
       placement="right"
       [ngbPopover]="popContent"
       popoverClass="my-custom-class"
       class="edit-icon"
       aria-hidden="false"
       aria-label="Example edit icon">edit
-    </mat-icon>
+    </mat-icon> -->
   </div>
 </div>
 <div class="cards-composer">
-  <input
-    [(ngModel)]="ticketName"
-    type="text"
-    class="form-control"
-    placeholder="Ajouter une carte..."
-    (keyup.enter)="onKeyUp()">
+  <mat-form-field>
+    <mat-label>Ajouter une carte</mat-label>
+    <input
+      [(ngModel)]="ticketName"
+      type="text"
+      matInput
+      (click)="hide = !hide"
+      (keyup.enter)="onKeyUp()"
+      [placeholder]="hide ? '' : 'Saisissez votre texte...'">
+    <mat-icon (click)="onKeyUp()" matSuffix>add_circle_outline</mat-icon>
+  </mat-form-field>
 </div>
 <ng-template #popContent>
   <app-quick-card-editor-buttons></app-quick-card-editor-buttons>
 </ng-template>
-

@@ -1,14 +1,17 @@
 .list-group-item {
-    width: 272px;
     margin: 10px 10px;
     height: 100%;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    white-space: nowrap;
     background-color: #B3C2F2;
     border-radius: 3px;
     border: none;
+
+    h2 {
+        max-width: fit-content;
+        font-size: 16px;
+    }
 }
 
 .form-control {
